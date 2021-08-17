@@ -118,8 +118,8 @@ String _getSeparatorChar(ListFormat collectionFormat) {
 
 Map<String, V> caseInsensitiveKeyMap<V>([Map<String, V>? value]) {
   final map = LinkedHashMap<String, V>(
-    equals: (key1, key2) => key1.toLowerCase() == key2.toLowerCase(),
-    hashCode: (key) => key.toLowerCase().hashCode,
+    equals: (key1, key2) => key1 == key2,
+    hashCode: (key) => key.hashCode,
   );
   if (value != null && value.isNotEmpty) map.addAll(value);
   return map;
